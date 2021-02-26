@@ -27,7 +27,7 @@ export default {
     },
     cursor() {
       return this.isResizing
-        ? this.layout == LAYOUT_VERTICAL ? 'col-resize' : 'row-resize'
+        ? this.layout === LAYOUT_VERTICAL ? 'col-resize' : 'row-resize'
         : '';
     },
     userSelect() {
@@ -37,7 +37,7 @@ export default {
 
   methods: {
     onMouseDown({ target: resizer, pageX: initialPageX, pageY: initialPageY }) {
-      if (resizer.className && resizer.className.match('multipane-resizer')) {
+      if (resizer.className && 'string' === typeof resizer.className && resizer.className.match('multipane-resizer')) {
         let self = this;
         let { $el: container, layout } = self;
 
@@ -52,7 +52,7 @@ export default {
         const { addEventListener, removeEventListener } = window;
 
         const resize = (initialSize, offset = 0) => {
-          if (layout == LAYOUT_VERTICAL) {
+          if (layout === LAYOUT_VERTICAL) {
             let containerWidth = container.clientWidth;
             let paneWidth = initialSize + offset;
 
@@ -61,7 +61,7 @@ export default {
               : paneWidth + 'px');
           }
 
-          if (layout == LAYOUT_HORIZONTAL) {
+          if (layout === LAYOUT_HORIZONTAL) {
             let containerHeight = container.clientHeight;
             let paneHeight = initialSize + offset;
 
@@ -82,7 +82,7 @@ export default {
 
         const onMouseMove = function({ pageX, pageY }) {
           size =
-            layout == LAYOUT_VERTICAL
+            layout === LAYOUT_VERTICAL
               ? resize(initialPaneWidth, pageX - initialPageX)
               : resize(initialPaneHeight, pageY - initialPageY);
 
@@ -92,7 +92,7 @@ export default {
         const onMouseUp = function() {
           // Run resize one more time to set computed width/height.
           size =
-            layout == LAYOUT_VERTICAL
+            layout === LAYOUT_VERTICAL
               ? resize(pane.clientWidth)
               : resize(pane.clientHeight);
 
