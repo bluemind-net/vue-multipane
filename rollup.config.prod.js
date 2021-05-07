@@ -10,6 +10,7 @@ export default {
   output: {
     file: 'dist/vue-multipane.min.js',
     format: 'umd',
+    sourcemap: false
   },
   plugins: [
     alias({
@@ -17,6 +18,10 @@ export default {
     }),
     vue({
       css: true,
+      sourceRoot: "/vue-multipane/",
+      template: {
+        isProduction: true
+      }
     }),
     buble(),
     nodeResolve({ browser: true, jsnext: true, main: true }),

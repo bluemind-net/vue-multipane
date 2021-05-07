@@ -17,6 +17,9 @@ export default {
     }),
     vue({
       css: true,
+      template: {
+        isProduction: true
+      }
     }),
     buble(),
     nodeResolve({ browser: true, jsnext: true, main: true }),
