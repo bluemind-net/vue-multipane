@@ -1,7 +1,7 @@
 {
   "name": "@bluemind/vue-multipane",
   "description": "Resizable split panes for Vue.js.",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "author": "Yan Sern <hey@yansern.io>",
   "main": "dist/vue-multipane.js",
   "unpkg": "dist/vue-multipane.min.js",
@@ -15,13 +15,13 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server --hot --env demo --config node_modules/laravel-mix/setup/webpack.config.js"
   },
   "license": "MIT",
-  "homepage": "https://github.com/yansern/vue-multipane/index.html",
+  "homepage": "https://github.com/bluemind-net/vue-multipane/index.html",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yansern/vue-multipane.git"
+    "url": "git+https://github.com/bluemind-net/vue-multipane.git"
   },
   "bugs": {
-    "url": "https://github.com/yansern/vue-multipane/issues"
+    "url": "https://github.com/bluemind-net/vue-multipane/issues"
   },
   "keywords": [
     "vue",
